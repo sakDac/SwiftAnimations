@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftAnimations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86S-Fb-cpK">
+                                <rect key="frame" x="113" y="286.5" width="149" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch this !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahW-zl-Ryr">
+                                        <rect key="frame" x="0.0" y="-0.5" width="149" height="94"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="149" id="9XF-lD-bNc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.36741219590000002" blue="0.2983177944" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="ahW-zl-Ryr" firstAttribute="centerY" secondItem="86S-Fb-cpK" secondAttribute="centerY" id="5Ut-c1-1g9"/>
+                                    <constraint firstItem="ahW-zl-Ryr" firstAttribute="centerX" secondItem="86S-Fb-cpK" secondAttribute="centerX" id="6w5-Z5-J5G"/>
+                                    <constraint firstAttribute="width" constant="149" id="BDH-Hj-QYf"/>
+                                    <constraint firstAttribute="height" constant="94" id="LXd-5o-oXB"/>
+                                    <constraint firstItem="ahW-zl-Ryr" firstAttribute="height" secondItem="86S-Fb-cpK" secondAttribute="height" id="OlZ-PD-2o0"/>
+                                    <constraint firstItem="ahW-zl-Ryr" firstAttribute="width" secondItem="86S-Fb-cpK" secondAttribute="width" id="mMa-0y-rdF"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Hlh-K2-qNg" appends="YES" id="KAV-tp-QTz"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et8-ge-Wgr">
+                                <rect key="frame" x="44" y="617" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Animate"/>
+                                <connections>
+                                    <action selector="handleStartBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ff-2H-1u9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPJ-Am-Rbp">
+                                <rect key="frame" x="269" y="617" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="STOP"/>
+                                <connections>
+                                    <action selector="handleStopBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DzN-Uv-NY7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="86S-Fb-cpK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j42-XW-4TD"/>
+                            <constraint firstItem="86S-Fb-cpK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sFH-08-hjP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aniLabel" destination="ahW-zl-Ryr" id="vhk-Y3-FCa"/>
+                        <outlet property="aniView" destination="86S-Fb-cpK" id="zcu-Jl-5tf"/>
+                        <outlet property="lblAnimate" destination="et8-ge-Wgr" id="leD-Wn-yyT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Hlh-K2-qNg">
+                    <connections>
+                        <action selector="handlePanGestureAniView:" destination="BYZ-38-t0r" id="qRv-k4-m5Y"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
